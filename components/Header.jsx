@@ -37,11 +37,11 @@ const Header = ({ navigation }) => {
                 </View>
 
                 <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                    <View style={{ height: 50, width: 50, backgroundColor: "gray", borderRadius: 50, padding: 10, opacity: 0.1 }}>
+                    <View style={{ height: 50, width: 50, backgroundColor: "#D3D3D3", borderRadius: 50, padding: 10, opacity: 0.4}}>
                         <MaterialCommunityIcons name="format-list-checkbox" size={30} />
                     </View>
 
-                    <View style={{ height: 50, width: 50, backgroundColor: "gray", borderRadius: 50, marginHorizontal: 10, padding: 10, opacity: 0.1 }}>
+                    <View style={{ height: 50, width: 50, backgroundColor: "#D1D1D1", borderRadius: 50, marginHorizontal: 10, padding: 10, opacity: 0.4 }}>
                         <MaterialCommunityIcons name="filter-variant" size={30} color="red" />
                     </View>
                 </View>
