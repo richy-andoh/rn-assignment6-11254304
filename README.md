@@ -1,4 +1,4 @@
-# React Native E-commerce App
+# React Native E-commerce UI App
 
 This project is a simple e-commerce UI app built with React Native and Expo. The app features two main screens: Home and Checkout. The Home screen displays a grid of products, while the Checkout screen lists the selected products along with their total cost.
 
