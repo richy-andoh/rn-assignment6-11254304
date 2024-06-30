@@ -3,6 +3,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import shoppingBag from "../assets/shoppingBag.png";
 import Logo from "../assets/Logo.png";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import { TouchableOpacity } from "react-native";
 
 
 const Header = ({ navigation }) => {
@@ -15,7 +16,7 @@ const Header = ({ navigation }) => {
                 </View>
 
                 <View>
-                    <Image source={Logo} onProgress={() => navigation.navigate("Checkout")} style={{ cursor: "pointer" }} />
+                    <Image source={Logo} style={{ cursor: "pointer" }} />
                 </View>
 
                 <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginRight: 10 }}>
@@ -23,7 +24,9 @@ const Header = ({ navigation }) => {
                         <Ionicons name="search-outline" size={33} />
                     </View>
                     <View>
-                        <Image source={shoppingBag} />
+                        <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
+                            <Image source={shoppingBag} />
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -34,11 +37,11 @@ const Header = ({ navigation }) => {
                 </View>
 
                 <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                    <View style={{ height: 50, width: 50, backgroundColor: "whitesmoke", borderRadius: 50 }}>
-
+                    <View style={{ height: 50, width: 50, backgroundColor: "gray", borderRadius: 50, padding: 10, opacity: 0.1 }}>
+                        <MaterialCommunityIcons name="format-list-checkbox" size={30} />
                     </View>
 
-                    <View style={{ height: 50, width: 50, backgroundColor: "gray", borderRadius: 50, marginHorizontal: 10, padding: 10, opacity: 0.6 }}>
+                    <View style={{ height: 50, width: 50, backgroundColor: "gray", borderRadius: 50, marginHorizontal: 10, padding: 10, opacity: 0.1 }}>
                         <MaterialCommunityIcons name="filter-variant" size={30} color="red" />
                     </View>
                 </View>

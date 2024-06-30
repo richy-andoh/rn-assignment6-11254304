@@ -74,7 +74,7 @@ function CheckoutTab() {
         },
       }}
     >
-      <Tab.Screen name="Checkout" component={CheckoutScreen} />
+      <Tab.Screen name="Checkout" component={CheckoutScreen}  options={{ headerShown: false}}/>
     </Tab.Navigator>
   );
 }
