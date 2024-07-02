@@ -38,8 +38,11 @@ This project is an assignment for the DCIT202 Mobile Application Development cou
 - Bottom tab navigation for the Checkout screen.
 
 
-## AsyncStorage Implementation
-The application uses AsyncStorage to store selected items locally on the device. This allows the cart items to persist even after the application is closed and reopened.
+## Local Storage Implementation
+- **Local Storage:** Utilizes AsyncStorage to store selected items locally on the device.
+  - Products added to the cart are stored persistently using AsyncStorage.
+  - Upon app restart, previously selected items are retrieved from AsyncStorage and displayed in the CartScreen.
+
 
 ## Functionality
  ### The application has the following functionality:
@@ -50,6 +53,8 @@ The application uses AsyncStorage to store selected items locally on the device.
  - Add products to their cart.
  - Remove products from their cart.
  - View the items in their cart.
+
+
 
 
 ## Screenshots
@@ -111,3 +116,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License.
+
+
+## Additional Information
+- This project was developed using React Native(Expo) version X.X.X.
+- Tested on iOS and Android simulators/emulators.
+
+## Credits
+Developed by Richmond Andoh.
