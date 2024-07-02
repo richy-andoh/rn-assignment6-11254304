@@ -1,7 +1,5 @@
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import remove from "../assets/remove.png";
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 
 const CheckoutItem = ({ id, name, description, price, image }) => {

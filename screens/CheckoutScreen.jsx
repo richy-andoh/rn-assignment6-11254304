@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
 
     scrollViewContent: {
-        paddingBottom: 100, // Ensure space for the footer
+        paddingBottom: 100,
     },
 
     cartItemCountContainer: {
