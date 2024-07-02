@@ -1,10 +1,22 @@
 # React Native E-commerce UI App
 
-This project is a simple e-commerce UI app built with React Native and Expo. The app features two main screens: Home and Checkout. The Home screen displays a grid of products, while the Checkout screen lists the selected products along with their total cost.
+This project is an assignment for the DCIT202 Mobile Application Development course. The goal is to create a mobile application that allows users to view a list of products, add products to their cart, remove products from their cart, and view the items in their cart. The application uses local storage to save selected items on the device.
 
 ## Table of Contents
 
 - [Features](#features)
+
+- [Components](#components)
+   - [HomeScreen](#homescreen)
+   - [CartScreen](#cartscreen)
+   - [ProductCard](#productcard)
+   - [CartItem](#cartitem)
+
+- [AsyncStorage Implementation](#asyncstorage-implementation)
+
+- [Functionality](#functionality)
+
+- [Live Demo](##live-demo)
 
 - [Screenshots](#screenshots)
 
@@ -24,6 +36,21 @@ This project is a simple e-commerce UI app built with React Native and Expo. The
 - Navigate to the Checkout screen from the Home screen.
 - Display the list of selected products and their total cost on the Checkout screen.
 - Bottom tab navigation for the Checkout screen.
+
+
+## AsyncStorage Implementation
+The application uses AsyncStorage to store selected items locally on the device. This allows the cart items to persist even after the application is closed and reopened.
+
+## Functionality
+ ### The application has the following functionality:
+
+ #### Users should be able to:
+
+ - View a list of available products.
+ - Add products to their cart.
+ - Remove products from their cart.
+ - View the items in their cart.
+
 
 ## Screenshots
 
@@ -74,7 +101,7 @@ This project is a simple e-commerce UI app built with React Native and Expo. The
 
 ### Live Demo
 
-[https://www.webmobilefirst.com/en/screencasts/KjftYbAvQ4/]
+![Demo](https://www.webmobilefirst.com/en/screencasts/KjftYbAvQ4/)
 
 
 ## Contributing
