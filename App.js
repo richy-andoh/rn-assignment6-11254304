@@ -6,19 +6,21 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './screens/HomeScreen';
 import CheckoutScreen from './screens/CheckoutScreen';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { CartProvider } from './context/CartContext';
 
 //const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
       <SafeAreaProvider>
         <HomeStack />
       </SafeAreaProvider>
     </NavigationContainer>
+    </CartProvider>
   );
 }
 

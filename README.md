@@ -71,6 +71,12 @@ This project is a simple e-commerce UI app built with React Native and Expo. The
     - Browse products on the Home screen.
     - Navigate to the Checkout screen to view the selected products and their total cost.
 
+
+### Live Demo
+
+[https://www.webmobilefirst.com/en/screencasts/KjftYbAvQ4/]
+
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

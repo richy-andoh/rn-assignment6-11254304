@@ -1,77 +1,49 @@
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import remove from "../assets/remove.png";
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+// import { useState, useEffect } from 'react';
+import { useCart } from '../context/CartContext';
 
-const CHECKOUTPRODUCTS = [
-    {
-        id: '1',
-        name: 'Office Wear',
-        description: 'Reversible Angora Cardigan',
-        price: "$ 150",
-        image: require("../assets/dress1.png"),
-    },
-    {
-        id: '2',
-        name: 'Black',
-        description: 'Reversible Angora Cardigan',
-        price: "$ 150",
-        image: require("../assets/dress2.png"),
-    },
-    // {
-    //     id: '3',
-    //     name: 'Church Wear',
-    //     description: 'Reversible Angora Cardigan',
-    //     price: "$ 150",
-    //     image: require("../assets/dress3.png"),
-    // },
-    // {
-    //     id: '4',
-    //     name: 'Lamerei',
-    //     description: 'Reversible Angora Cardigan',
-    //     price: "$ 150",
-    //     image: require("../assets/dress4.png"),
-    // },
-    // {
-    //     id: '5',
-    //     name: '21WN',
-    //     description: 'Reversible Angora Cardigan',
-    //     price: "$ 150",
-    //     image: require("../assets/dress5.png"),
-    // },
-    // {
-    //     id: '6',
-    //     nname: 'Lopo',
-    //     description: 'Reversible Angora Cardigan',
-    //     price: "$ 150",
-    //     image: require("../assets/dress6.png"),
-    // },
-];
+const CheckoutItem = ({ id, name, description, price, image }) => {
 
-const CheckoutItem = ({ name, description, price, image }) => {
+    const { removeFromCart } = useCart();
+
+    const handleRemoveFromCart = () => {
+        removeFromCart(id);
+    }
+
+   
     return (
         <View style={styles.container}>
             <View>
                 <Image style={styles.image} source={image} />
             </View>
 
-            <View>
+            <View style={{ width: 200, marginLeft: 20, }}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.description}>{description}</Text>
-                <Text style={styles.price}>{price}</Text>
-                <Image source={remove} style={{ alignSelf: "flex-end", marginTop: 20, marginRight: 15}} />
+                <Text style={styles.price}>$ {price}</Text>
+                <TouchableOpacity onPress={handleRemoveFromCart} style={{ alignSelf: "flex-end", marginTop: 20, marginRight: 25}} >
+                <Image source={remove} />
+                </TouchableOpacity>
             </View>
         </View>
     )
 }
 
-
 const CheckoutProduct = () => {
+
+    const { cartItems } = useCart();
+   
+
     return (
         <FlatList
-            data={CHECKOUTPRODUCTS}
+            data={cartItems}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
                 <TouchableOpacity>
                     <CheckoutItem
+                        id={item.id} 
                         description={item.description}
                         name={item.name}
                         image={item.image}
@@ -81,27 +53,10 @@ const CheckoutProduct = () => {
             )}
             scrollEnabled={false}
         />
-
-        // <View style={styles.container}>
-        //   <FlatList
-        //     data={PRODUCTS}
-        //     keyExtractor={(item) => item.id}
-        //     renderItem={({ item }) => (
-        //       <TouchableOpacity>
-        //         <View style={styles.product}>
-        //           <Image source={{ uri: item.image }} style={styles.image} />
-        //           <Text style={styles.name}>{item.name}</Text>
-        //           <Text style={styles.price}>${item.price}</Text>
-        //         </View>
-        //       </TouchableOpacity>
-        //     )}
-        //   />
-        //   <Button title="Go to Checkout" onPress={() => navigation.navigate('Checkout')} />
-        // </View>
     )
 }
-export default CheckoutProduct;
 
+export default CheckoutProduct;
 
 const styles = StyleSheet.create({
     container: {
@@ -114,17 +69,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginTop: 26
     },
-    // product: {
-    //   marginBottom: 20,
-    //   backgroundColor: '#fff',
-    //   padding: 10,
-    //   borderRadius: 5,
-    //   shadowColor: '#000',
-    //   shadowOpacity: 0.1,
-    //   shadowOffset: { width: 0, height: 1 },
-    //   shadowRadius: 5,
-    //   elevation: 2,
-    // },
     image: {
         borderRadius: 5,
         height: 210,
@@ -135,13 +79,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 10,
     },
-
     description: {
         opacity: 0.7,
         fontSize: 16,
         marginTop: 6
     },
-
     price: {
         fontSize: 18,
         color: 'red',
