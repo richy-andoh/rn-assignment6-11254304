@@ -101,7 +101,7 @@ The application uses AsyncStorage to store selected items locally on the device.
 
 ### Live Demo
 
-![Demo][https://www.webmobilefirst.com/en/screencasts/KjftYbAvQ4/]
+<a href="https://www.webmobilefirst.com/en/screencasts/KjftYbAvQ4/">Demo</a>
 
 
 ## Contributing
